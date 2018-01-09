@@ -9,7 +9,7 @@ read -p 'Username (Do Not Enter Root): ' uservar
 # Create folder in user director for auth-logs to copy to
 # Remove 
 #rmdir ~/auth-log
-mkdir ~/Record-Auth-Log/auth-log
+mkdir ~/Record-Auth-Log/auth-logs
 
 # Below is for the Record-Auth-Log Scripts
 # Create cron file for cp auth.log
@@ -19,7 +19,7 @@ crontab -l > cpauthcron
 echo "0 * * * * chmod -R 777 /home/${uservar}/Record-Auth-Log/auth-logs" >> cpauthcron
 
 # Crontab to execute the copy-log.py script
-echo "59 23 * * * cd /home/${uservar}/Record-Auth-Log/script/copy-log.py &&  /usr/bin/python /home/${uservar}/Record-Auth-Log/script/copy-log.py" >> cpauthcron
+echo "59 23 * * * cd /home/${uservar}/Record-Auth-Log/script/ &&  /usr/bin/python /home/${uservar}/Record-Auth-Log/script/copy-log.py" >> cpauthcron
 
 # Install new cron file in crontab
 sudo crontab cpauthcron
