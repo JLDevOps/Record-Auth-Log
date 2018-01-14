@@ -26,7 +26,7 @@ def copy_log_file(auth_log_file, auth_log_dest):
 
 def main():
 	auth_log_dir = "/var/log/auth.log"
-	dest_log_dir = "/home/destinesavior/auth-logs/"
+	dest_log_dir = "~/Record-Auth-Log/auth-logs/"
 	day_counter = get_day_counter('day_counter.txt')
 
 	if (day_counter == 3):
